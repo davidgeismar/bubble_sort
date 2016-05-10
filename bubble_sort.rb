@@ -1,11 +1,10 @@
 def bubble_sort(arr)
-  # initialiser previous arr[i] current = arr[i+1]
+  # initialiser arr[i] arr[i] arr[i + 1] = arr[i+1]
   swaps = 0
   i = 0
-  current, previous = arr[1], arr[0]
   while i < arr.length - 1
-    print "#{arr} #{previous} #{current}"
-    if previous > current
+    print "#{arr} #{arr[i]} #{arr[i + 1]}"
+    if arr[i] > arr[i + 1]
       print ' Y '
       swaps += 1
       # la fameuse assignation parallèle, qui permet (entre autres!) d'échanger deux valeurs 
@@ -15,12 +14,10 @@ def bubble_sort(arr)
       # intervertit les valeurs de var1 et var2
       arr[i], arr[i + 1] = arr[i + 1], arr[i] 
       i = 0
-      current, previous = arr[1], arr[0]
+      # arr[i + 1], arr[i] = arr[1], arr[0]
     else
       print ' N '
       i += 1
-      previous = arr[i]
-      current = arr[i + 1]
     end
     print "#{arr}\n"
   end
