@@ -8,7 +8,12 @@ def bubble_sort(arr)
     if previous > current
       print ' Y '
       swaps += 1
-      arr[i], arr[i + 1] = arr[i + 1], arr[i]
+      # la fameuse assignation parallèle, qui permet (entre autres!) d'échanger deux valeurs 
+      # sans créer une troisième variable temporaire
+      # le principe: 
+      # var1, var2 = var2, var1 
+      # intervertit les valeurs de var1 et var2
+      arr[i], arr[i + 1] = arr[i + 1], arr[i] 
       i = 0
       current, previous = arr[1], arr[0]
     else
